@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Canteen Billing System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- A. HEADER -->
+  <header class="header">
+    <div class="header-icon">🍽️</div>
+    <h1>Mini Canteen Billing System</h1>
+    <p class="subtitle">Quick Ordering, Easy Billing</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Workflow strip (same 5 steps as the PPT) -->
+    <section class="steps" aria-label="Working of the project">
+      <div class="step"><span>1</span>Display menu</div>
+      <div class="step"><span>2</span>Select item</div>
+      <div class="step"><span>3</span>Enter quantity</div>
+      <div class="step"><span>4</span>Calculate bill</div>
+      <div class="step"><span>5</span>Show total</div>
+    </section>
+
+    <!-- Message box (errors and info appear here) -->
+    <div id="message" class="message hidden" role="alert"></div>
+
+    <!-- B. FOOD MENU -->
+    <section>
+      <h2 class="section-title">🍴 Today's Menu</h2>
+      <div id="menu" class="menu-grid">
+        <!-- Food cards are created by script.js -->
+      </div>
+    </section>
+
+    <!-- C. BILLING AREA -->
+    <section class="card">
+      <h2 class="section-title">🧾 Current Bill</h2>
+
+      <p id="emptyText" class="empty-text">No items added yet. Choose a food item from the menu above.</p>
+
+      <div id="billTableWrap" class="table-wrap hidden">
+        <table class="bill-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="billBody"></tbody>
+        </table>
+      </div>
+
+      <div class="grand-total">
+        <span>Grand Total</span>
+        <strong id="grandTotal">₹0</strong>
+      </div>
+
+      <p class="formula">Total Bill = Item Price × Quantity</p>
+
+      <div class="button-row">
+        <button id="generateBtn" class="btn btn-primary">Generate Bill</button>
+        <button id="clearBtn" class="btn btn-secondary">Clear Bill</button>
+        <button id="printBtn" class="btn btn-green">Print Bill</button>
+      </div>
+    </section>
+
+    <!-- D. BILL SUMMARY (shown after clicking Generate Bill) -->
+    <section id="receipt" class="card receipt hidden">
+      <h2 class="receipt-title">CANTEEN BILL</h2>
+      <p id="receiptDate" class="receipt-date"></p>
+
+      <table class="receipt-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody id="receiptBody"></tbody>
+      </table>
+
+      <div class="receipt-total">
+        <span>Total Bill</span>
+        <strong id="receiptTotal">₹0</strong>
+      </div>
+      <p class="receipt-thanks">Thank you! Visit again 😊</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Java Mini Project &bull; Mini Canteen Billing System</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
